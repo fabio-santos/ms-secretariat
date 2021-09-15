@@ -1,4 +1,4 @@
-package com.vkncode.secretariat.domain.services;
+package com.vkncode.secretariat.domain.service;
 
 import com.vkncode.secretariat.domain.dto.SecretariatDTO;
 import com.vkncode.secretariat.domain.dto.UnderInvestigationDTO;
@@ -20,8 +20,8 @@ public class SecretariatService {
         return repository.findAll();
     }
 
-    public Secretariat findById(Long id) {
-        return repository.findById(id).orElseThrow(() -> new RuntimeException(id + " not available"));
+    public Optional<Secretariat> findById(Long id) {
+        return repository.findById(id);
     }
 
     public Secretariat save(SecretariatDTO secretariatDTO) {

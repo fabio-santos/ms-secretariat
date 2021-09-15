@@ -3,7 +3,7 @@ package com.vkncode.secretariat.controller;
 import com.vkncode.secretariat.domain.dto.SecretariatDTO;
 import com.vkncode.secretariat.domain.dto.UnderInvestigationDTO;
 import com.vkncode.secretariat.domain.entity.Secretariat;
-import com.vkncode.secretariat.domain.services.SecretariatService;
+import com.vkncode.secretariat.domain.service.SecretariatService;
 import io.swagger.annotations.*;
 import lombok.AllArgsConstructor;
 import org.springframework.http.HttpStatus;
@@ -34,7 +34,7 @@ public class SecretariatController {
             required = true)
     @GetMapping("/{id}")
     public Secretariat getById(@PathVariable Long id) {
-        return service.findById(id);
+        return service.findById(id).orElseThrow(() -> new RuntimeException(id + " not available"));
     }
 
     @ResponseStatus(HttpStatus.CREATED)

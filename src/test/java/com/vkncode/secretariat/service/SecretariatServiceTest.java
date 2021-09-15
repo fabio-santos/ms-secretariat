@@ -2,7 +2,7 @@ package com.vkncode.secretariat.service;
 
 import com.vkncode.secretariat.domain.dto.SecretariatDTO;
 import com.vkncode.secretariat.domain.entity.Destination;
-import com.vkncode.secretariat.domain.services.SecretariatService;
+import com.vkncode.secretariat.domain.service.SecretariatService;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
